@@ -76,8 +76,9 @@ class _ClientProfileState extends State<ClientProfile> {
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                            const Color(0xFFFF6F61),
-              const Color.fromARGB(255, 175, 238, 238),             
+                            Color.fromARGB(255, 255, 97, 244),
+              Color.fromARGB(255, 73, 196, 196), 
+                            
              
                         ],
                         begin: Alignment.topLeft,
@@ -110,7 +111,7 @@ class _ClientProfileState extends State<ClientProfile> {
                 ),
               ],
             ),
-            const SizedBox(height: 80),
+            const SizedBox(height: 30),
             // Client Name
             Text(
               clientData.isNotEmpty ? clientData['client_name'] : 'No Name',
@@ -125,7 +126,7 @@ class _ClientProfileState extends State<ClientProfile> {
             Wrap(
               spacing: 15,
               runSpacing: 15,
-              alignment: WrapAlignment.center,
+              alignment: WrapAlignment.spaceEvenly,
               children: [
                 _buildButton('Edit Profile', Icons.edit, () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => Editpro()));
@@ -152,6 +153,7 @@ class _ClientProfileState extends State<ClientProfile> {
                     margin: const EdgeInsets.all(16),
                     elevation: 4,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                    color:  Color.fromARGB(255, 227, 195, 225),
                     child: Padding(
                       padding: const EdgeInsets.all(16),
                       child: Column(
@@ -195,15 +197,17 @@ class _ClientProfileState extends State<ClientProfile> {
   Widget _buildDetailRow(IconData icon, String label, String value) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
-      child: Row(
+      child: Column(
         children: [
-          Icon(icon, color: const Color.fromARGB(255, 0, 128, 128), size: 30),
-          const SizedBox(width: 12),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          Row(
             children: [
-              Text(label, style: const TextStyle(fontSize: 14, color: Colors.grey)),
-              Text(value, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              Icon(icon, color: const Color.fromARGB(255, 0, 128, 128), size: 25),
+              const SizedBox(width: 12),
+               Text(label, style: const TextStyle(fontSize: 14, color:  Color.fromARGB(255, 118, 37, 112), fontWeight: FontWeight.bold)),
+               Text(':', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                const SizedBox(width: 12),
+                  Text(value, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              
             ],
           ),
         ],

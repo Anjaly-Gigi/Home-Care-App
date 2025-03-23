@@ -56,7 +56,7 @@ class _LoginScreenState extends State<Mylogin> {
       final fcmToken = await FirebaseMessaging.instance.getToken();
       if (fcmToken != null) {
         await supabase
-            .from('tbl_user')
+            .from('tbl_client')
             .update({'fcm_token': fcmToken}).eq('id', uid);
       }
     } catch (e) {

@@ -26,16 +26,45 @@ class _LoginScreenState extends State<Mylogin> {
     }
   }
 
-  Future<void> login() async {
+ Future<void> login() async {
     try {
-      final authentication = await supabase.auth
-          .signInWithPassword(email: email.text, password: password.text);     
-        await _updateProviderLocation();
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => DashBoard()));
-      
+      final auth = await supabase.auth
+          .signInWithPassword(password: password.text, email: email.text);
+      String id = auth.user!.id;
+      final response = await supabase
+          .from('tbl_sp')
+          .select()
+          .eq('id', id);
+          if(response.isNotEmpty){
+            await saveFcmToken(id);
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DashBoard(),
+              ),
+            );
+          }
+          else{
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text('Invalid email or password'),
+              duration: Duration(seconds: 2),
+            ));
+          }
     } catch (e) {
-      print(e);
+      print('error: $e');
+    }
+  }
+
+  Future<void> saveFcmToken(uid) async {
+    try {
+      final fcmToken = await FirebaseMessaging.instance.getToken();
+      if (fcmToken != null) {
+        await supabase
+            .from('tbl_sp')
+            .update({'fcm_token': fcmToken}).eq('id', uid);
+      }
+    } catch (e) {
+      print("FCM Token Error: $e");
     }
   }
 

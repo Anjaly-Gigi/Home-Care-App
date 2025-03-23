@@ -58,9 +58,12 @@ class _ClientDashboardState extends State<ClientDashboard> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              const Color(0xFFFF6F61),
-              const Color.fromARGB(255, 175, 238, 238),             
-              const Color(0xFFFF6F61),
+               const Color(0xFFFF6F61),
+              const Color.fromARGB(255, 255, 160, 151),                       
+              const Color.fromARGB(255, 175, 238, 238),
+              const Color.fromARGB(255, 24, 141, 141),
+              
+
               
             ],
             begin: Alignment.topLeft,
@@ -133,26 +136,26 @@ class _ClientDashboardState extends State<ClientDashboard> {
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
-              Center(
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Nearestsp()));
+              // const SizedBox(height: 20),
+              // Center(
+              //   child: ElevatedButton(
+              //     onPressed: () {
+              //       Navigator.push(context, MaterialPageRoute(builder: (context) => Nearestsp()));
                     
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 24, 141, 141), 
-                    padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  child: const Text(
-                    'Search for Nearest Service Provider',
-                    style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 255, 255, 255)),
-                  ),
-                ),
-              ),
+              //     },
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: const Color.fromARGB(255, 24, 141, 141), 
+              //       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(8),
+              //       ),
+              //     ),
+              //     child: const Text(
+              //       'Search for Nearest Service Provider',
+              //       style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 255, 255, 255)),
+              //     ),
+              //   ),
+              // ),
               const SizedBox(height: 20),
               const Text("Choose a Skill",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
