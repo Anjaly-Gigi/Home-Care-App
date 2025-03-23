@@ -13,8 +13,11 @@ class Mylogin extends StatefulWidget {
 class _MyloginState extends State<Mylogin> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  String n = '';
+  String p = '';
   final formKey = GlobalKey<FormState>();
   bool _isVisible = true;
+
 Future<void> login() async {
   try {
     final authResponse = await supabase.auth.signInWithPassword(

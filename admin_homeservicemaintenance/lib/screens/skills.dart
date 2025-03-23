@@ -180,11 +180,11 @@ class _ManageSkillsState extends State<ManageSkills> {
                                   borderRadius: BorderRadius.circular(10)),
                               enabledBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.brown, width: 1.5),
+                                    BorderSide(color: const Color.fromARGB(255, 57, 51, 107), width: 1.5),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderSide:
-                                    BorderSide(color: Colors.brown, width: 2),
+                                    BorderSide(color:  const Color.fromARGB(255, 57, 51, 107), width: 2),
                               ),
                             ),
                           ),
@@ -192,7 +192,7 @@ class _ManageSkillsState extends State<ManageSkills> {
                         ElevatedButton(
                           onPressed: submit,
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.brown, // Button color
+                            backgroundColor:  const Color.fromARGB(255, 57, 51, 107), // Button color
                             foregroundColor: Colors.white, // Text color
                             padding: EdgeInsets.symmetric(
                                 vertical: 15, horizontal: 20),
@@ -213,7 +213,7 @@ class _ManageSkillsState extends State<ManageSkills> {
 
               Divider(
                 thickness: 2,
-                color: Colors.brown,
+                color: const Color.fromARGB(255, 57, 51, 107),
               ),
               SizedBox(height: 16),
               Text(
@@ -221,7 +221,7 @@ class _ManageSkillsState extends State<ManageSkills> {
                 style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
-                    color: Colors.brown),
+                    color: const Color.fromARGB(255, 57, 51, 107)),
               ),
               SizedBox(height: 16),
 

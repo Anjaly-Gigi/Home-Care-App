@@ -156,7 +156,7 @@ class _ManagePlaceState extends State<ManagePlace> {
                   ElevatedButton(
                     onPressed: submit,
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.brown, // Button color
+                        backgroundColor:  const Color.fromARGB(255, 57, 51, 107), // Button color
                         foregroundColor: Colors.white, // Text color
                         padding: EdgeInsets.symmetric(vertical: 23, horizontal: 20),
                         shape: RoundedRectangleBorder(

@@ -121,7 +121,7 @@ Widget build(BuildContext context) {
                   ElevatedButton(
                     onPressed: submit,
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.brown, // Button color
+                      backgroundColor: const Color.fromARGB(255, 57, 51, 107), // Button color
                         foregroundColor: Colors.white, // Text color
                       padding: EdgeInsets.symmetric(horizontal: 28, vertical: 23),
                       shape: RoundedRectangleBorder(
@@ -135,7 +135,7 @@ Widget build(BuildContext context) {
             ),
             SizedBox(height: 16),
             Divider(
-              color: Colors.brown,
+              color: const Color.fromARGB(255, 57, 51, 107),
               thickness: 2,
             ),
             SizedBox(height: 16),
